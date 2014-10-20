@@ -1,7 +1,12 @@
+echo "Creating an SSH key for you..."
+ssh-keygen -t rsa
 #@TODO make a public key
-echo "Please add your public key to Github \n"
+echo "Please add this public key to Github \n"
 echo "https://help.github.com/articles/generating-ssh-keys/ \n"
 read -p "Press [Enter] key after this..."
+
+echo "Installing xcode-stuff"
+xcode-select --install
 
 # Check for Homebrew,
 # Install if we don't have it
@@ -16,6 +21,12 @@ brew update
 
 echo "Installing Git..."
 brew install git
+
+echo "Git config"
+
+git config --global user.name "Brad Parbs"
+git config --global user.email brad@bradparbs.com
+
 
 echo "Installing brew git utilities..."
 brew install git-extras
@@ -59,6 +70,9 @@ curl https://gist.githubusercontent.com/bradp/a52fffd9cad1cd51edb7/raw/cb46de8e4
 echo "Setting up Zsh plugins..."
 cd ~/.oh-my-zsh/custom/plugins
 git clone git://github.com/zsh-users/zsh-syntax-highlighting.git
+
+echo "Setting ZSH as shell..."
+chsh -s /bin/zsh
 
 # Apps
 apps=(

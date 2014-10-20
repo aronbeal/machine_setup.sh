@@ -1,6 +1,6 @@
 echo "Creating an SSH key for you..."
 ssh-keygen -t rsa
-#@TODO make a public key
+
 echo "Please add this public key to Github \n"
 echo "https://help.github.com/articles/generating-ssh-keys/ \n"
 read -p "Press [Enter] key after this..."

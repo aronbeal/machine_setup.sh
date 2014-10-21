@@ -109,7 +109,6 @@ apps=(
   transmission
   zoomus
   onepassword
-  rescue
   sequel-pro
   chromecast
   qlmarkdown

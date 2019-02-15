@@ -19,68 +19,39 @@ fi
 echo "Updating homebrew..."
 brew update
 
-echo "Installing Git..."
-brew install git
+# Install core homebrew packages
+homebrew_packages=(
+  closure-compiler
+  cmake
+  composer
+  csstidy
+  ddev
+  gcc
+  git
+  git-extras
+  git-flow
+  mackup
+  node
+  trash
+  tree
+  wget
+  yarn
+)
+echo "Installing Homebrew Packages..."
+brew install ${homebrew_packages[@]}
 
 echo "Git config"
 
 git config --global user.name "Aron Beal"
 git config --global user.email aron.beal.biz@gmail.com
 
-
-echo "Installing brew git utilities..."
-brew install git-extras
-brew install legit
-brew install git-flow
-
-echo "Installing other brew stuff..."
-brew install tree
-brew install wget
-brew install trash
-brew install mackup
-brew install node
-
-
-#@TODO install our custom fonts and stuff
-
-echo "Cleaning up brew"
-brew cleanup
-
 echo "Installing homebrew cask"
 brew install caskroom/cask/brew-cask
 
-#echo "Copying dotfiles from Github"
-#cd ~
-#git clone git@github.com:bradp/dotfiles.git .dotfiles
-#cd .dotfiles
-#sh symdotfiles
 
-#echo "Grunting it up"
-#npm install -g grunt-cli
-
-#Install Zsh & Oh My Zsh
-#echo "Installing Oh My ZSH..."
-#curl -L http://install.ohmyz.sh | sh
-
-#echo "Setting up Oh My Zsh theme..."
-#cd  /Users/bradparbs/.oh-my-zsh/themes
-#curl https://gist.githubusercontent.com/bradp/a52fffd9cad1cd51edb7/raw/cb46de8e4c77beb7fad38c81dbddf531d9875c78/brad-muse.zsh-theme > brad-muse.zsh-theme
-
-#echo "Setting up Zsh plugins..."
-#cd ~/.oh-my-zsh/custom/plugins
-#git clone git://github.com/zsh-users/zsh-syntax-highlighting.git
-
-#echo "Setting ZSH as shell..."
-#chsh -s /bin/zsh
-
-# Apps
+# Apps (Cask installation)
 apps=(
   alfred
-#  bartender
-#  bettertouchtool
-#  cleanmymac
-#  cloud
-#  colloquy
   diffmerge
   docker
   dropbox
@@ -95,19 +66,11 @@ apps=(
   spectacle
   slack
   spotify
-#  vagrant
   iterm2
   sublime-text2
-#  textexpander
-#  virtualbox
   mailbox
   vlc
-#  transmission
   sequel-pro
-#  chromecast
-#  qlmarkdown
-#  qlstephen
-#  suspicious-package
 )
 
 # Install apps to /Applications
@@ -117,15 +80,12 @@ brew cask install --appdir="/Applications" ${apps[@]}
 
 brew cask alfred link
 
+echo "Cleaning up brew"
 brew cask cleanup
 brew cleanup
 
 echo "Please setup and sync Dropbox, and then run this script again."
 read -p "Press [Enter] key after this..."
-
-#echo "Restoring setup from Mackup..."
-#mackup restore @TODO uncomment
-
 
 echo "Setting some Mac settings..."
 

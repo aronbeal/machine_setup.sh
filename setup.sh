@@ -24,8 +24,8 @@ brew install git
 
 echo "Git config"
 
-git config --global user.name "Brad Parbs"
-git config --global user.email brad@bradparbs.com
+git config --global user.name "Aron Beal"
+git config --global user.email aron.beal.biz@gmail.com
 
 
 echo "Installing brew git utilities..."
@@ -37,7 +37,6 @@ echo "Installing other brew stuff..."
 brew install tree
 brew install wget
 brew install trash
-brew install svn
 brew install mackup
 brew install node
 
@@ -50,70 +49,65 @@ brew cleanup
 echo "Installing homebrew cask"
 brew install caskroom/cask/brew-cask
 
-echo "Copying dotfiles from Github"
-cd ~
-git clone git@github.com:bradp/dotfiles.git .dotfiles
-cd .dotfiles
-sh symdotfiles
+#echo "Copying dotfiles from Github"
+#cd ~
+#git clone git@github.com:bradp/dotfiles.git .dotfiles
+#cd .dotfiles
+#sh symdotfiles
 
-echo "Grunting it up"
-npm install -g grunt-cli
+#echo "Grunting it up"
+#npm install -g grunt-cli
 
 #Install Zsh & Oh My Zsh
-echo "Installing Oh My ZSH..."
-curl -L http://install.ohmyz.sh | sh
+#echo "Installing Oh My ZSH..."
+#curl -L http://install.ohmyz.sh | sh
 
-echo "Setting up Oh My Zsh theme..."
-cd  /Users/bradparbs/.oh-my-zsh/themes
-curl https://gist.githubusercontent.com/bradp/a52fffd9cad1cd51edb7/raw/cb46de8e4c77beb7fad38c81dbddf531d9875c78/brad-muse.zsh-theme > brad-muse.zsh-theme
+#echo "Setting up Oh My Zsh theme..."
+#cd  /Users/bradparbs/.oh-my-zsh/themes
+#curl https://gist.githubusercontent.com/bradp/a52fffd9cad1cd51edb7/raw/cb46de8e4c77beb7fad38c81dbddf531d9875c78/brad-muse.zsh-theme > brad-muse.zsh-theme
 
-echo "Setting up Zsh plugins..."
-cd ~/.oh-my-zsh/custom/plugins
-git clone git://github.com/zsh-users/zsh-syntax-highlighting.git
+#echo "Setting up Zsh plugins..."
+#cd ~/.oh-my-zsh/custom/plugins
+#git clone git://github.com/zsh-users/zsh-syntax-highlighting.git
 
-echo "Setting ZSH as shell..."
-chsh -s /bin/zsh
+#echo "Setting ZSH as shell..."
+#chsh -s /bin/zsh
 
 # Apps
 apps=(
   alfred
-  bartender
-  bettertouchtool
-  cleanmymac
-  cloud
-  colloquy
-  cornerstone
+#  bartender
+#  bettertouchtool
+#  cleanmymac
+#  cloud
+#  colloquy
   diffmerge
+  docker
   dropbox
   filezilla
   firefox
   google-chrome
   harvest
-  hipchat
-  licecap
+  lastpass-cli
   mou
   phpstorm
-  private-internet-access
-  razer-synapse
   sourcetree
-  steam
+  spectacle
+  slack
   spotify
-  vagrant
+#  vagrant
   iterm2
   sublime-text2
-  textexpander
-  virtualbox
+#  textexpander
+#  virtualbox
   mailbox
   vlc
-  skype
-  transmission
-  zoomus
-  onepassword
+#  transmission
   sequel-pro
-  chromecast
-  qlmarkdown
-  qlstephen
-  suspicious-package
+#  chromecast
+#  qlmarkdown
+#  qlstephen
+#  suspicious-package
 )
 
 # Install apps to /Applications
@@ -129,7 +123,7 @@ brew cleanup
 echo "Please setup and sync Dropbox, and then run this script again."
 read -p "Press [Enter] key after this..."
 
-echo "Restoring setup from Mackup..."
+#echo "Restoring setup from Mackup..."
 #mackup restore @TODO uncomment
 
 
@@ -240,62 +234,12 @@ defaults write com.apple.screencapture location -string "$HOME/Desktop"
 #"Setting screenshot format to PNG"
 defaults write com.apple.screencapture type -string "png"
 
-#"Hiding Safari's bookmarks bar by default"
-defaults write com.apple.Safari ShowFavoritesBar -bool false
-
-#"Hiding Safari's sidebar in Top Sites"
-defaults write com.apple.Safari ShowSidebarInTopSites -bool false
-
-#"Disabling Safari's thumbnail cache for History and Top Sites"
-defaults write com.apple.Safari DebugSnapshotsUpdatePolicy -int 2
-
-#"Enabling Safari's debug menu"
-defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
-
-#"Making Safari's search banners default to Contains instead of Starts With"
-defaults write com.apple.Safari FindOnPageMatchesWordStartsOnly -bool false
-
-#"Removing useless icons from Safari's bookmarks bar"
-defaults write com.apple.Safari ProxiesInBookmarksBar "()"
-
-#"Allow hitting the Backspace key to go to the previous page in history"
-defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2BackspaceKeyNavigationEnabled -bool true
-
-#"Enabling the Develop menu and the Web Inspector in Safari"
-defaults write com.apple.Safari IncludeDevelopMenu -bool true
-defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true
-defaults write com.apple.Safari "com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled" -bool true
-
-#"Adding a context menu item for showing the Web Inspector in web views"
-defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
-
-#"Use `~/Downloads/Incomplete` to store incomplete downloads"
-defaults write org.m0k.transmission UseIncompleteDownloadFolder -bool true
-defaults write org.m0k.transmission IncompleteDownloadFolder -string "${HOME}/Downloads/Incomplete"
-
-#"Don't prompt for confirmation before downloading"
-defaults write org.m0k.transmission DownloadAsk -bool false
-
-#"Trash original torrent files"
-defaults write org.m0k.transmission DeleteOriginalTorrent -bool true
-
-#"Hide the donate message"
-defaults write org.m0k.transmission WarningDonate -bool false
-
-#"Hide the legal disclaimer"
-defaults write org.m0k.transmission WarningLegal -bool false
-
 #"Disable 'natural' (Lion-style) scrolling"
 defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
 
 # Don’t automatically rearrange Spaces based on most recent use
 defaults write com.apple.dock mru-spaces -bool false
 
-
-
 killall Finder
 
-
 echo "Done!"
-
-#@TODO install vagrant and sites folder

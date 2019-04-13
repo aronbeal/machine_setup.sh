@@ -21,21 +21,51 @@ brew update
 
 # Install core homebrew packages
 homebrew_packages=(
+  ack
   closure-compiler
   cmake
   composer
-  csstidy
   ddev
   gcc
+  gdbm
+  gettext
+  ghostscript
   git
   git-extras
   git-flow
+  gmp
+  icu4c
+  isl
+  jmeter
+  jpeg
+  libev
+  libgcrypt
+  libgpg-error
+  libidn2
+  libmpc
+  libtiff
+  libunistring
   mackup
-  node
+  mariadb@10.1
+  mpfr
+  mysql-client
+  nodebrew
+  openssl
+  pcre2
+  percona-xtrabackup
+  python
+  python@2
+  readline
+  rsync
+  speedtest-cli
+  sqlite
+  telnet
   trash
   tree
+  unison
+  unox
   wget
-  yarn
+  xz
 )
 echo "Installing Homebrew Packages..."
 brew install ${homebrew_packages[@]}
@@ -52,25 +82,25 @@ brew install caskroom/cask/brew-cask
 # Apps (Cask installation)
 apps=(
   alfred
+  angry-ip-scanner
+  calibre
   diffmerge
   docker
   dropbox
-  filezilla
   firefox
   google-chrome
   harvest
-  lastpass-cli
-  mou
+  iterm2
+  java
+  kdiff3
+  p4v
   phpstorm
+  sequel-pro
+  slack
   sourcetree
   spectacle
-  slack
   spotify
-  iterm2
-  sublime-text2
-  mailbox
   vlc
-  sequel-pro
 )
 
 # Install apps to /Applications
@@ -86,6 +116,9 @@ brew cleanup
 
 echo "Please setup and sync Dropbox, and then run this script again."
 read -p "Press [Enter] key after this..."
+
+echo "Adding a default profile to ${HOME}/.profile..."
+cp ./.profile ${HOME}/.profile
 
 echo "Setting some Mac settings..."
 

@@ -84,6 +84,7 @@ apps=(
   alfred
   angry-ip-scanner
   calibre
+  dbeaver-community
   diffmerge
   docker
   dropbox

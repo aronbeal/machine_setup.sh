@@ -26,6 +26,7 @@ PYTHON=${HOME}/Library/Python/3.7/bin:${HOME}/Library/Python/2.7/bin
 # path.
 GEM_HOME=$HOME/.rvm/gems/ruby-2.3.0
 GEM_PATH=$GEM_HOME
+GISTS=/Users/aronbeal/Sites/hottomali/gists
 
 # Outputs the WAN IP (as from whatismyip) to the console.
 function wan_ip {

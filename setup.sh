@@ -202,6 +202,9 @@ defaults write com.apple.dock autohide -bool true
 defaults write com.apple.dock autohide-delay -float 0
 defaults write com.apple.dock autohide-time-modifier -float 0
 
+#"Setting the dock to only show actively running applications"
+defaults write com.apple.dock static-only -bool TRUE; killall Dock;
+
 #"Setting email addresses to copy as 'foo@example.com' instead of 'Foo Bar <foo@example.com>' in Mail.app"
 defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
 

@@ -205,6 +205,9 @@ defaults write com.apple.dock autohide-time-modifier -float 0
 #"Setting the dock to only show actively running applications"
 defaults write com.apple.dock static-only -bool TRUE; killall Dock;
 
+#"Adds a recent applications folder to the dock"
+defaults write com.apple.dock persistent-others -array-add '{"tile-data" = {"list-type" = 1;}; "tile-type" = "recents-tile";}'; killall Dock;
+
 #"Setting email addresses to copy as 'foo@example.com' instead of 'Foo Bar <foo@example.com>' in Mail.app"
 defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
 

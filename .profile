@@ -77,7 +77,7 @@ alias dbash="docker-compose exec php /bin/bash"
 alias pstorm="open -a \"PhpStorm\""
 # For a local installation of jmeter.  Note: need to update this
 # once I get the homebrew version working properly.
-alias jmeter=/Users/aronbeal/apache-jmeter-5.1.1/bin/jmeter
+alias jmeter=$HOME/apache-jmeter-5.1.1/bin/jmeter
 # Use aws flag with common settings
 alias aws="$(which aws) --region us-west-2"
 alias simulator='open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app'

@@ -38,6 +38,7 @@ homebrew_packages=(
   isl
   jmeter
   jpeg
+  jsonpp
   libev
   libgcrypt
   libgpg-error

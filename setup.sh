@@ -1,7 +1,3 @@
-if [ "$EUID" -ne 0 ]
-  then echo "Please run as root"
-  exit
-fi
 echo "Creating an SSH key for you..."
 ssh-keygen -t rsa
 

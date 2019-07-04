@@ -54,8 +54,7 @@ homebrew_packages=(
   openssl
   pcre2
   percona-xtrabackup
-  python
-  python@2
+  python3
   readline
   rsync
   speedtest-cli

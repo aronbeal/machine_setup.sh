@@ -109,6 +109,7 @@ apps=(
   sourcetree
   spectacle
   spotify
+  sublime-text
   visual-studio-code
   vlc
 )

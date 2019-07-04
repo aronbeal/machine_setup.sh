@@ -53,6 +53,7 @@ homebrew_packages=(
   mpfr
   mysql-client
   nodebrew
+  nvm
   openssl
   pcre2
   percona-xtrabackup
@@ -101,6 +102,7 @@ apps=(
   iterm2
   java
   kdiff3
+  node
   p4v
   phpstorm
   postman
@@ -124,6 +126,9 @@ brew cask alfred link
 echo "Cleaning up brew"
 brew cask cleanup
 brew cleanup
+
+echo "Adding any global node packages"
+node install -g yarn
 
 echo "Please setup and sync Dropbox, and then run this script again."
 read -p "Press [Enter] key after this..."

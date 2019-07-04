@@ -86,6 +86,7 @@ brew install caskroom/cask/brew-cask
 # Apps (Cask installation)
 apps=(
   alfred
+  android-studio
   angry-ip-scanner
   calibre
   dbeaver-community

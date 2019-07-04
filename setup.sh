@@ -18,6 +18,8 @@ fi
 # Update homebrew recipes
 echo "Updating homebrew..."
 brew update
+# Custom taps
+brew tap drud/ddev
 
 # Install core homebrew packages
 homebrew_packages=(

@@ -90,6 +90,7 @@ apps=(
   docker
   dropbox
   firefox
+  gas-mask
   geektool
   google-chrome
   harvest

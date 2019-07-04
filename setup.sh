@@ -24,6 +24,7 @@ brew tap drud/ddev
 # Install core homebrew packages
 homebrew_packages=(
   ack
+  awscli
   closure-compiler
   cmake
   composer

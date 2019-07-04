@@ -96,6 +96,7 @@ apps=(
   geektool
   google-chrome
   harvest
+  intel-haxm
   iterm2
   java
   kdiff3

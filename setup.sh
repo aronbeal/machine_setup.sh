@@ -18,10 +18,13 @@ fi
 # Update homebrew recipes
 echo "Updating homebrew..."
 brew update
+# Custom taps
+brew tap drud/ddev
 
 # Install core homebrew packages
 homebrew_packages=(
   ack
+  awscli
   closure-compiler
   cmake
   composer
@@ -51,6 +54,7 @@ homebrew_packages=(
   mpfr
   mysql-client
   nodebrew
+  nvm
   openssl
   pcre2
   percona-xtrabackup
@@ -83,6 +87,7 @@ brew install caskroom/cask/brew-cask
 # Apps (Cask installation)
 apps=(
   alfred
+  android-studio
   angry-ip-scanner
   calibre
   dbeaver-community
@@ -94,9 +99,11 @@ apps=(
   geektool
   google-chrome
   harvest
+  intel-haxm
   iterm2
   java
   kdiff3
+  node
   p4v
   phpstorm
   postman
@@ -105,6 +112,7 @@ apps=(
   sourcetree
   spectacle
   spotify
+  sublime-text
   visual-studio-code
   vlc
 )
@@ -119,6 +127,9 @@ brew cask alfred link
 echo "Cleaning up brew"
 brew cask cleanup
 brew cleanup
+
+echo "Adding any global node packages"
+node install -g yarn
 
 echo "Please setup and sync Dropbox, and then run this script again."
 read -p "Press [Enter] key after this..."

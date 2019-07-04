@@ -63,6 +63,7 @@ homebrew_packages=(
   telnet
   trash
   tree
+  typora
   unison
   unox
   wget

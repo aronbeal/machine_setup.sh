@@ -90,6 +90,7 @@ apps=(
   docker
   dropbox
   firefox
+  geektool
   google-chrome
   harvest
   iterm2
@@ -97,11 +98,13 @@ apps=(
   kdiff3
   p4v
   phpstorm
+  postman
   sequel-pro
   slack
   sourcetree
   spectacle
   spotify
+  visual-studio-code
   vlc
 )
 

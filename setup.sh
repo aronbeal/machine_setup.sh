@@ -36,6 +36,7 @@ homebrew_packages=(
   git
   git-extras
   git-flow
+  git-lfs
   gmp
   icu4c
   isl
@@ -103,6 +104,7 @@ apps=(
   iterm2
   java
   kdiff3
+  mysql-client
   node
   p4v
   phpstorm

@@ -23,55 +23,132 @@ brew tap drud/ddev
 
 # Install core homebrew packages
 homebrew_packages=(
-  ack
-  awscli
-  closure-compiler
-  cmake
-  composer
-  ddev
-  gcc
-  gdbm
-  gettext
-  ghostscript
-  git
-  git-extras
-  git-flow
-  git-lfs
-  gmp
-  icu4c
-  isl
-  jmeter
-  jpeg
-  jsonpp
-  libev
-  libgcrypt
-  libgpg-error
-  libidn2
-  libmpc
-  libtiff
-  libunistring
-  mackup
-  mariadb@10.1
-  mpfr
-  mysql-client
-  nodebrew
-  nvm
-  openssl
-  pcre2
-  percona-xtrabackup
-  python3
-  readline
-  rsync
-  speedtest-cli
-  sqlite
-  telnet
-  trash
-  tree
-  typora
-  unison
-  unox
-  wget
-  xz
+    ack
+    apr
+    apr-util
+    argon2
+    aspell
+    autoconf
+    aws-elasticbeanstalk
+    awscli
+    brotli
+    c-ares
+    closure-compiler
+    cmake
+    cocoapods
+    composer
+    coreutils
+    curl-openssl
+    ddev
+    dnsmasq
+    docker
+    emojify
+    flac
+    fontconfig
+    freetds
+    freetype
+    fribidi
+    gawk
+    gcc
+    gd
+    gdbm
+    gettext
+    ghostscript
+    git
+    git-extras
+    git-flow
+    git-lfs
+    glib
+    gmp
+    go
+    graphviz
+    gts
+    htop
+    icu4c
+    isl
+    jansson
+    jasper
+    jemalloc
+    jmeter
+    jpeg
+    jq
+    json-yaml
+    jsonpp
+    lame
+    libev
+    libevent
+    libffi
+    libgcrypt
+    libgpg-error
+    libidn
+    libidn2
+    libmetalink
+    libmpc
+    libogg
+    libpng
+    libpq
+    libsndfile
+    libsodium
+    libssh2
+    libtiff
+    libtool
+    libunistring
+    libvorbis
+    libyaml
+    libzip
+    mackup
+    mad
+    midnight-commander
+    minica
+    mkcert
+    mpfr
+    mysql-client
+    ncurses
+    netpbm
+    nghttp2
+    node
+    nodebrew
+    noti
+    nspr
+    nss
+    oniguruma
+    openldap
+    openssl
+    openssl@1.1
+    opus
+    opusfile
+    pcre2
+    percona-xtrabackup
+    php
+    pkg-config
+    pngcrush
+    python3
+    qcachegrind
+    qt
+    readline
+    rlwrap
+    rsync
+    rtmpdump
+    s-lang
+    sox
+    sqlite
+    squid
+    telnet
+    terraform
+    tidy-html5
+    timer
+    tldr
+    translate-shell
+    travis
+    tree
+    typora
+    unison
+    unixodbc
+    watchman
+    webp
+    wget
+    xz
+    yajl
 )
 echo "Installing Homebrew Packages..."
 brew install ${homebrew_packages[@]}
@@ -87,36 +164,38 @@ brew install caskroom/cask/brew-cask
 
 # Apps (Cask installation)
 apps=(
-  alfred
-  android-studio
-  angry-ip-scanner
-  calibre
-  dbeaver-community
-  diffmerge
-  docker
-  dropbox
-  firefox
-  gas-mask
-  geektool
-  google-chrome
-  harvest
-  intel-haxm
-  iterm2
-  java
-  kdiff3
-  mysql-client
-  node
-  p4v
-  phpstorm
-  postman
-  sequel-pro
-  slack
-  sourcetree
-  spectacle
-  spotify
-  sublime-text
-  visual-studio-code
-  vlc
+    alfred
+    android-sdk
+    android-studio
+    angry-ip-scanner
+    caffeine
+    cyberduck
+    dbeaver-community
+    diffmerge
+    docker
+    firefox
+    gas-mask
+    google-chrome
+    harvest
+    intel-haxm
+    iterm2
+    java
+    kdiff3
+    mysqlworkbench
+    ngrok
+    p4v
+    phpstorm
+    postman
+    sequel-pro
+    slack
+    sourcetree
+    spectacle
+    spotify
+    squidman
+    sublime-text
+    typora
+    visual-studio-code
+    vlc
 )
 
 # Install apps to /Applications
@@ -129,12 +208,6 @@ brew cask alfred link
 echo "Cleaning up brew"
 brew cask cleanup
 brew cleanup
-
-echo "Adding any global node packages"
-node install -g yarn
-
-echo "Please setup and sync Dropbox, and then run this script again."
-read -p "Press [Enter] key after this..."
 
 echo "Adding a default profile to ${HOME}/.profile..."
 cp ./.profile ${HOME}/.profile
@@ -221,12 +294,6 @@ defaults write com.apple.dock autohide-time-modifier -float 0
 
 #"Setting the dock to only show actively running applications"
 defaults write com.apple.dock static-only -bool TRUE; killall Dock;
-
-#"Adds a recent applications folder to the dock"
-defaults write com.apple.dock persistent-others -array-add '{"tile-data" = {"list-type" = 1;}; "tile-type" = "recents-tile";}'; killall Dock;
-
-#"Shows hidden app icons"
-defaults write com.apple.dock showhidden -bool TRUE; killall Dock
 
 #"Setting email addresses to copy as 'foo@example.com' instead of 'Foo Bar <foo@example.com>' in Mail.app"
 defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false

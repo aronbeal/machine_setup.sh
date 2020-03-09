@@ -21,52 +21,117 @@ brew update
 
 # Install core homebrew packages
 homebrew_packages=(
-  ack
-  closure-compiler
-  cmake
-  composer
-  ddev
-  gcc
-  gdbm
-  gettext
-  ghostscript
-  git
-  git-extras
-  git-flow
-  gmp
-  icu4c
-  isl
-  jmeter
-  jpeg
-  jsonpp
-  libev
-  libgcrypt
-  libgpg-error
-  libidn2
-  libmpc
-  libtiff
-  libunistring
-  mackup
-  mariadb@10.1
-  mpfr
-  mysql-client
-  nodebrew
-  openssl
-  pcre2
-  percona-xtrabackup
-  python
-  python@2
-  readline
-  rsync
-  speedtest-cli
-  sqlite
-  telnet
-  trash
-  tree
-  unison
-  unox
-  wget
-  xz
+    apr
+    apr-util
+    argon2
+    aspell
+    autoconf
+    aws-elasticbeanstalk
+    awscli
+    brotli
+    c-ares
+    cocoapods
+    composer
+    coreutils
+    curl-openssl
+    ddev
+    dnsmasq
+    docker
+    emojify
+    flac
+    fontconfig
+    freetds
+    freetype
+    fribidi
+    gawk
+    gd
+    gdbm
+    gettext
+    git-lfs
+    glib
+    gmp
+    go
+    graphviz
+    gts
+    htop
+    icu4c
+    jansson
+    jasper
+    jemalloc
+    jpeg
+    jq
+    json-yaml
+    lame
+    libev
+    libevent
+    libffi
+    libgcrypt
+    libgpg-error
+    libidn
+    libidn2
+    libmetalink
+    libogg
+    libpng
+    libpq
+    libsndfile
+    libsodium
+    libssh2
+    libtiff
+    libtool
+    libunistring
+    libvorbis
+    libyaml
+    libzip
+    mad
+    midnight-commander
+    minica
+    mkcert
+    mpfr
+    mysql-client
+    ncurses
+    netpbm
+    nghttp2
+    node
+    noti
+    nspr
+    nss
+    oniguruma
+    openldap
+    openssl
+    openssl@1.1
+    opus
+    opusfile
+    pcre
+    percona-xtrabackup
+    php
+    pkg-config
+    pngcrush
+    python
+    python@3.8
+    qcachegrind
+    qt
+    readline
+    rlwrap
+    rtmpdump
+    s-lang
+    sox
+    sqlite
+    squid
+    telnet
+    terraform
+    tidy-html5
+    timer
+    tldr
+    translate-shell
+    travis
+    tree
+    unixodbc
+    watchman
+    webp
+    wget
+    wifi-password
+    xz
+    yajl
 )
 echo "Installing Homebrew Packages..."
 brew install ${homebrew_packages[@]}
@@ -82,27 +147,38 @@ brew install caskroom/cask/brew-cask
 
 # Apps (Cask installation)
 apps=(
-  alfred
-  angry-ip-scanner
-  calibre
-  dbeaver-community
-  diffmerge
-  docker
-  dropbox
-  firefox
-  google-chrome
-  harvest
-  iterm2
-  java
-  kdiff3
-  p4v
-  phpstorm
-  sequel-pro
-  slack
-  sourcetree
-  spectacle
-  spotify
-  vlc
+    alfred
+    android-sdk
+    android-studio
+    angry-ip-scanner
+    caffeine
+    cyberduck
+    dbeaver-community
+    diffmerge
+    docker
+    firefox
+    gas-mask
+    google-chrome
+    harvest
+    intel-haxm
+    iterm2
+    java
+    kdiff3
+    mysqlworkbench
+    ngrok
+    p4v
+    phpstorm
+    postman
+    sequel-pro
+    slack
+    sourcetree
+    spectacle
+    spotify
+    squidman
+    sublime-text
+    typora
+    visual-studio-code
+    vlc
 )
 
 # Install apps to /Applications
@@ -115,9 +191,6 @@ brew cask alfred link
 echo "Cleaning up brew"
 brew cask cleanup
 brew cleanup
-
-echo "Please setup and sync Dropbox, and then run this script again."
-read -p "Press [Enter] key after this..."
 
 echo "Adding a default profile to ${HOME}/.profile..."
 cp ./.profile ${HOME}/.profile

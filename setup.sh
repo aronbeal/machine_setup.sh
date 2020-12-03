@@ -63,7 +63,7 @@ homebrew_packages=(
     go
     graphviz
     gts
-    htop
+    htop # Like top, but easier to navigate.
     icu4c
     isl
     jansson
@@ -71,7 +71,7 @@ homebrew_packages=(
     jemalloc
     jmeter
     jpeg
-    jq
+    jq # Bash level json parsing
     json-yaml
     jsonpp
     lame
@@ -104,6 +104,7 @@ homebrew_packages=(
     mpfr
     mysql-client
     ncurses
+    ncdu # Disk utility for terminal
     netpbm
     nghttp2
     node
@@ -133,19 +134,22 @@ homebrew_packages=(
     sox
     sqlite
     squid
+    taskwarrior # open-source terminal-based TODO program
     telnet
     terraform
     tidy-html5
     timer
-    tldr
+    tldr # Like man page, but with examples, e.g. 'tldr find'
     translate-shell
     travis
     tree
+    tty-clock #clock for the terminal.
     typora
     unison
     unixodbc
     watchman
     webp
+    wifi-password # Shows password of current wifi, keychain shortcut.
     wget
     xz
     yajl
@@ -157,9 +161,6 @@ echo "Git config"
 
 git config --global user.name "Aron Beal"
 git config --global user.email aron.beal.biz@gmail.com
-
-echo "Installing homebrew cask"
-brew install caskroom/cask/brew-cask
 
 
 # Apps (Cask installation)
@@ -201,7 +202,7 @@ apps=(
 # Install apps to /Applications
 # Default is: /Users/$user/Applications
 echo "installing apps with Cask..."
-brew cask install --appdir="/Applications" ${apps[@]}
+brew install --cask --appdir="/Applications" ${apps[@]}
 
 brew cask alfred link
 
